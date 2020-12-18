@@ -1,0 +1,29 @@
+--------
+
+Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
+
+The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
+
+--------
+
+# Data protection in Amazon DevOps Guru<a name="data-protection"></a>
+
+The AWS [shared responsibility model](http://aws.amazon.com/compliance/shared-responsibility-model/) applies to data protection in Amazon DevOps Guru\. As described in this model, AWS is responsible for protecting the global infrastructure that runs all of the AWS Cloud\. You are responsible for maintaining control over your content that is hosted on this infrastructure\. This content includes the security configuration and management tasks for the AWS services that you use\. For more information about data privacy, see the [Data Privacy FAQ](http://aws.amazon.com/compliance/data-privacy-faq)\. For information about data protection in Europe, see the [AWS Shared Responsibility Model and GDPR](http://aws.amazon.com/blogs/security/the-aws-shared-responsibility-model-and-gdpr/) blog post on the *AWS Security Blog*\.
+
+For data protection purposes, we recommend that you protect AWS account credentials and set up individual user accounts with AWS Identity and Access Management \(IAM\)\. That way each user is given only the permissions necessary to fulfill their job duties\. We also recommend that you secure your data in the following ways:
++ Use multi\-factor authentication \(MFA\) with each account\.
++ Use SSL/TLS to communicate with AWS resources\. We recommend TLS 1\.2 or later\.
++ Set up API and user activity logging with AWS CloudTrail\.
++ Use AWS encryption solutions, along with all default security controls within AWS services\.
++ Use advanced managed security services such as Amazon Macie, which assists in discovering and securing personal data that is stored in Amazon S3\.
++ If you require FIPS 140\-2 validated cryptographic modules when accessing AWS through a command line interface or an API, use a FIPS endpoint\. For more information about the available FIPS endpoints, see [Federal Information Processing Standard \(FIPS\) 140\-2](http://aws.amazon.com/compliance/fips/)\.
+
+We strongly recommend that you never put sensitive identifying information, such as your customers' account numbers, into free\-form fields such as a **Name** field\. This includes when you work with DevOps Guru or other AWS services using the console, API, AWS CLI, or AWS SDKs\. Any data that you enter into DevOps Guru or other services might get picked up for inclusion in diagnostic logs\. When you provide a URL to an external server, don't include credentials information in the URL to validate your request to that server\.
+
+## Data encryption in DevOps Guru<a name="security-encryption"></a>
+
+Encryption is an important part of DevOps Guru security\. Some encryption, such as for data in transit, is provided by default and does not require you to do anything\. Other encryption, such as for data at rest, you can configure when you create your project or build\. 
++ **Encryption of data at\-rest**: For all AWS resources analyzed by DevOps Guru, the Amazon CloudWatch metrics and data, resources IDs, and AWS CloudTrail events are stored using Amazon S3, Amazon DynamoDB, and Amazon Kinesis\. If AWS CloudFormation stacks are used to define the analyzed resources, then stack data is also collected\. DevOps Guru uses the data retention policies of Amazon S3, DynamoDB, and Kinesis\. Data stored in Kinesis can be retained for up to one year and depends on the policies set\. Data stored in Amazon S3 and DynamoDB is stored for one year\. 
+
+  Stored data is encrypted using the data\-at\-rest encryption capabilities of Amazon S3, DynamoDB, and Kinesis\. 
++  **Encryption of data in\-transit**: All communication between customers and DevOps Guru and between DevOps Guru and its downstream dependencies is protected using TLS and authenticated using the Signature Version 4 signing process\. All DevOps Guru endpoints use certificates managed by AWS Certificate Manager Private Certificate Authority\. For more information, see [Signature Version 4 signing process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) and [What is ACM PCA](https://docs.aws.amazon.com/acm-pca/latest/userguide/)\. 
