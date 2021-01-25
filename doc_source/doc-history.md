@@ -10,7 +10,7 @@ The preview is open to all AWS accounts\. You do not need to request access\. Fe
 
 The following table describes the documentation for this release of DevOps Guru\.
 + **API version: latest**
-+ **Latest documentation update:** December 11, 2020
++ **Latest documentation update:**January 25, 2021
 
 | Change | Description | Date | 
 | --- |--- |--- |

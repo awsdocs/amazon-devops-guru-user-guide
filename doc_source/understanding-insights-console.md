@@ -13,7 +13,7 @@ Use the Amazon DevOps Guru console to view useful information in your insights 
 To view an insight, follow the steps in [View insights](view-insights.md) to find one, then choose its name\. The insight page contains the following details\. <a name="insight-details-page-items"></a>
 
 Insight overview  
-Use this section to get a high\-level overview of the insight\. You can see the status of the insight \(*Active* or *Resolved*\),; how many AWS CloudFormation stacks are affected; when the insight started, ended, and was last updated; and the related operations item if there is one\.   
+Use this section to get a high\-level overview of the insight\. You can see the status of the insight \(*Ongoing* or *Closed*\), how many AWS CloudFormation stacks are affected, when the insight started, ended, and was last updated, and the related operations item if there is one\.   
 Choose the number of affected stacks to see their names\. The anomalous behavior that created the insight occurred in resources created by the affected stacks\. 
 
 Aggregated metrics  
