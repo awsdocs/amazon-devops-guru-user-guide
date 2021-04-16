@@ -27,3 +27,7 @@ Encryption is an important part of DevOps Guru security\. Some encryption, such
 
   Stored data is encrypted using the data\-at\-rest encryption capabilities of Amazon S3, DynamoDB, and Kinesis\. 
 +  **Encryption of data in\-transit**: All communication between customers and DevOps Guru and between DevOps Guru and its downstream dependencies is protected using TLS and authenticated using the Signature Version 4 signing process\. All DevOps Guru endpoints use certificates managed by AWS Certificate Manager Private Certificate Authority\. For more information, see [Signature Version 4 signing process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) and [What is ACM PCA](https://docs.aws.amazon.com/acm-pca/latest/userguide/)\. 
+
+## Traffic privacy<a name="security-traffic-privacy"></a>
+
+ You can improve the security of your resource analysis and insight generation by configuring DevOps Guru to use an interface VPC endpoint\. To do this, you do not need an internet gateway, NAT device, or virtual private gateway\. It also is not required to configure PrivateLink, though it is recommended\. For more information, see [DevOps Guru and interface VPC endpoints \(AWS PrivateLink\)](vpc-interface-endpoints.md)\. For more information about PrivateLink and VPC endpoints, see [AWS PrivateLink](https://aws.amazon.com/privatelink/) and [Accessing AWS services through PrivateLink](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html#what-is-privatelink)\. 

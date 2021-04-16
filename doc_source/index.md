@@ -1,7 +1,7 @@
-# Amazon DevOps Guru User Guide
+# Amazon DevOps Guru User Guide
 
 -----
-*****Copyright &copy; 2021 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy;  Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -40,6 +40,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Logging and monitoring DevOps Guru](monitoring-overview.md)
       + [Monitoring DevOps Guru with Amazon CloudWatch](monitoring-cloudwatch.md)
       + [Logging Amazon DevOps Guru API calls with AWS CloudTrail](logging-using-cloudtrail.md)
+   + [DevOps Guru and interface VPC endpoints (AWS PrivateLink)](vpc-interface-endpoints.md)
    + [Infrastructure security in DevOps Guru](infrastructure-security.md)
    + [Resilience in Amazon DevOps Guru](disaster-recovery-resiliency.md)
 + [Quotas for Amazon DevOps Guru](quotas.md)

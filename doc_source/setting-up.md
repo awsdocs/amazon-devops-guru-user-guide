@@ -35,7 +35,7 @@ Think about how you want to configure coverage for Amazon DevOps Guru\. Coverag
 
 1. You can use AWS CloudFormation stacks to specify which resources are analyzed by DevOps Guru\. Think about which resources you need, then create AWS CloudFormation templates that define and generate those resources for you\. You specify your stacks when you configure DevOps Guru\. You can also update your stacks at any time\. For more information, see [Working with AWS CloudFormation stacks in DevOps Guru](working-with-cfn-stacks.md)\. 
 
- For more information, see [Getting started with DevOps Guru](getting-started.md) and [Supported AWS services in DevOps Guru](quotas.md#services-devops-guru)\. 
+ For more information, see [Getting started with DevOps Guru](getting-started.md)\. For more information about the supported services and resources, see [Amazon DevOps Guru pricing](http://aws.amazon.com/devops-guru/pricing/)\. 
 
 ## Identify your Amazon SNS notifications topic<a name="setting-up-notifications"></a>
 

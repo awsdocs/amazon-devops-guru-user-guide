@@ -20,5 +20,6 @@ This documentation helps you understand how to apply the shared responsibility m
 + [Data protection in Amazon DevOps Guru](data-protection.md)
 + [Identity and Access Management for Amazon DevOps Guru](security-iam.md)
 + [Logging and monitoring DevOps Guru](monitoring-overview.md)
++ [DevOps Guru and interface VPC endpoints \(AWS PrivateLink\)](vpc-interface-endpoints.md)
 + [Infrastructure security in DevOps Guru](infrastructure-security.md)
 + [Resilience in Amazon DevOps Guru](disaster-recovery-resiliency.md)

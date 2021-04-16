@@ -20,7 +20,7 @@ The preview is open to all AWS accounts\. You do not need to request access\. Fe
         {
             "Effect": "Allow",
             "Principal": {
-                "Service": "devops-guru.amazonaws.com"
+                "Service": "region-id.devops-guru.amazonaws.com"
             },
             "Action": [
                 "kms:GenerateDataKey*",

@@ -12,7 +12,7 @@ The preview is open to all AWS accounts\. You do not need to request access\. Fe
 
 **View your DevOps Guru insights**
 
-1. Open the Amazon DevOps Guru console at [https://console\.aws\.amazon\.com/codeguru/devops\-guru/](https://console.aws.amazon.com/codeguru/devops-guru/)\. 
+1. Open the Amazon DevOps Guru console at [https://console\.aws\.amazon\.com/devops\-guru/](https://console.aws.amazon.com/devops-guru/)\.
 
 1. Open the navigation pane, then choose **Insights**\. 
 

@@ -12,13 +12,13 @@ To configure Amazon DevOps Guru to use for the first time, you must choose whic
 
 **Enable DevOps Guru**
 
-1. Open the Amazon DevOps Guru console at [https://console\.aws\.amazon\.com/codeguru/devops\-guru/](https://console.aws.amazon.com/codeguru/devops-guru/)\.
+1. Open the Amazon DevOps Guru console at [https://console\.aws\.amazon\.com/devops\-guru/](https://console.aws.amazon.com/devops-guru/)\.
 
 1. In **DevOps Guru analysis coverage**, choose one of the following\. 
    + **Analyze all AWS resources in the current AWS account**: DevOps Guru analyzes all AWS resources in your account\. 
    + **Choose AWS resources to analyze later**: DevOps Guru analyzes only AWS resources that are defined in AWS CloudFormation stacks that you specify later\. 
 
-   DevOps Guru can analyze any resource that is associated with the AWS it supports\. For more information, see [Supported AWS services in DevOps Guru](quotas.md#services-devops-guru)\. 
+   DevOps Guru can analyze any resource that is associated with the AWS it supports\. For more information about the supported services and resources, see [Amazon DevOps Guru pricing](http://aws.amazon.com/devops-guru/pricing/)\.
 
 1. You can add up to two topics\. DevOps Guru uses the topic or topics to notify you about important DevOps Guru events, such as the creation of a new insight\. If you don't specify a topic now, you can add one later by choosing **Settings** in the navigation pane\. 
 
