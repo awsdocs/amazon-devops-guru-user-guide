@@ -1,11 +1,3 @@
---------
-
-Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
-
-The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
-
---------
-
 # View DevOps Guru insights<a name="view-insights"></a>
 
  You can view your insights using the AWS Management Console\. 
@@ -20,7 +12,7 @@ The preview is open to all AWS accounts\. You do not need to request access\. Fe
 
 1. \(Optional\) Use one or more of the following filters to find the insights you are looking for\. 
    + Choose the **Reactive** or **Proactive** tab, depending on the type of insight you are looking for\. 
-   + Choose **Filter insights by status or severity**, then choose the **Status** or **Severity** option to specify a filter\. You can add a status and a severity filter\.
+   + Choose **Filter insights by status, severity, or resource name**, then choose the **Status**, **Severity**, or **Resource name** option to specify a filter\. You can add a status, severity, and resource filter\.
    + Choose or specify a time range to filter by insight creation time\.
      +  **12h** shows insights created in the past 12 hours\.
      +  **1d** shows insights created in the past day\.

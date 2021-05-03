@@ -1,11 +1,3 @@
---------
-
-Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
-
-The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
-
---------
-
 # Setting up Amazon DevOps Guru<a name="setting-up"></a>
 
 Complete the tasks in this section to set up Amazon DevOps Guru for the first time\. If you already have an AWS account, know which AWS account or accounts you want to analyze, and have an Amazon Simple Notification Service topic to use for insight notifications, you can skip ahead to [Getting started with DevOps Guru](getting-started.md)\. 

@@ -1,11 +1,3 @@
---------
-
-Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
-
-The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
-
---------
-
 # Identity\-based policies for Amazon DevOps Guru<a name="security_iam_id-based-policy-examples"></a>
 
 By default, IAM users and roles don't have permission to create or modify DevOps Guru resources\. They also can't perform tasks using the AWS Management Console, AWS CLI, or AWS API\. An IAM administrator must create IAM policies that grant users and roles permission to perform actions on the resources that they need\. The administrator must then attach those policies to the IAM users or groups that require those permissions\.
@@ -190,13 +182,15 @@ The `AmazonDevOpsGuruReadOnlyAccess` policy contains the following statement\.
         "devops-guru:DescribeInsight",
         "devops-guru:DescribeResourceCollectionHealth",
         "devops-guru:DescribeServiceIntegration",
+        "devops-guru:GetCostEstimation",
         "devops-guru:GetResourceCollection",
         "devops-guru:ListAnomaliesForInsight",
         "devops-guru:ListEvents",
         "devops-guru:ListInsights",
         "devops-guru:ListNotificationChannels",
         "devops-guru:ListRecommendations",
-        "devops-guru:SearchInsights"
+        "devops-guru:SearchInsights",
+        "devops-guru:StartCostEstimation"
       ],
       "Resource": "*"
     },

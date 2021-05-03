@@ -1,11 +1,3 @@
---------
-
-Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
-
-The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
-
---------
-
 # Using service\-linked roles for DevOps Guru<a name="using-service-linked-roles"></a>
 
 Amazon DevOps Guru uses AWS Identity and Access Management \(IAM\)[ service\-linked roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role)\. A service\-linked role is a unique type of IAM role that is linked directly to DevOps Guru\. Service\-linked roles are predefined by DevOps Guru and include all the permissions that the service requires to call AWS CloudTrail, Amazon CloudWatch, AWS CodeDeploy, and AWS X\-Ray, on your behalf\. 
@@ -16,9 +8,9 @@ You can delete a service\-linked role only after first deleting its related reso
 
 ## Service\-linked role permissions for DevOps Guru<a name="slr-permissions"></a>
 
-DevOps Guru uses the service\-linked role named `AmazonDevOpsGuruServiceLinkedRolePolicy`\. This is a managed IAM policy with scoped permissions that DevOps Guru needs to run in your account\.
+DevOps Guru uses the service\-linked role named `AmazonDevOpsGuruServiceRolePolicy`\. This is a managed IAM policy with scoped permissions that DevOps Guru needs to run in your account\.
 
-The `AmazonDevOpsGuruServiceLinkedRolePolicy` service\-linked role trusts the following service to assume the role:
+The `AmazonDevOpsGuruServiceRolePolicy` service\-linked role trusts the following service to assume the role:
 + `devops-guru.amazonaws.com`
 
 The role permissions policy allows DevOps Guru to complete the following actions on the specified resources\.
@@ -30,6 +22,7 @@ The role permissions policy allows DevOps Guru to complete the following action
   {
     "Effect": "Allow",
     "Action": [
+      "autoscaling:DescribeAutoScalingGroups",
       "cloudtrail:LookupEvents",
       "cloudwatch:GetMetricData",
       "cloudwatch:ListMetrics",
@@ -70,6 +63,14 @@ The role permissions policy allows DevOps Guru to complete the following action
     "Resource": "*"
   },
   {
+    "Sid": "AllowAddTagsToOpsItem",
+    "Effect": "Allow",
+    "Action": [
+        "ssm:AddTagsToResource"
+    ],
+    "Resource": "arn:aws:ssm:*:*:opsitem/*"
+  },
+  {
     "Sid": "AllowAccessOpsItem",
     "Effect": "Allow",
     "Action": [
@@ -96,7 +97,7 @@ This service\-linked role can appear in your account if you completed an action 
 
 ## Editing a service\-linked role for DevOps Guru<a name="edit-slr"></a>
 
-DevOps Guru does not allow you to edit the `AmazonDevOpsGuruServiceLinkedRolePolicy` service\-linked role\. After you create a service\-linked role, you cannot change the name of the role because various entities might reference the role\. However, you can edit the description of the role using IAM\. For more information, see [Editing a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
+DevOps Guru does not allow you to edit the `AmazonDevOpsGuruServiceRolePolicy` service\-linked role\. After you create a service\-linked role, you cannot change the name of the role because various entities might reference the role\. However, you can edit the description of the role using IAM\. For more information, see [Editing a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
 
 ## Deleting a service\-linked role for DevOps Guru<a name="delete-slr"></a>
 
@@ -107,4 +108,4 @@ If the DevOps Guru service is using the role when you try to delete the resourc
 
 **To manually delete the service\-linked role using IAM**
 
-Use the IAM console, the AWS CLI, or the AWS API to delete the `AmazonDevOpsGuruServiceLinkedRolePolicy` service\-linked role\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
+Use the IAM console, the AWS CLI, or the AWS API to delete the `AmazonDevOpsGuruServiceRolePolicy` service\-linked role\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.

@@ -1,11 +1,3 @@
---------
-
-Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
-
-The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
-
---------
-
 # Permissions for cross account Amazon SNS topics<a name="sns-required-permissions"></a>
 
 Use the information in this topic only if you want to configure Amazon DevOps Guru to deliver Amazon SNS topics owned by a different account than yours\. DevOps Guru must have permissions to send notifications to an Amazon SNS topic\. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS topics in your AWS account\.

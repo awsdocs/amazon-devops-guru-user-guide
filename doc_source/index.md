@@ -17,6 +17,7 @@ Amazon's trademarks and trade dress may not be used in
 + [What is Amazon DevOps Guru?](welcome.md)
    + [DevOps Guru concepts](concepts.md)
 + [Setting up Amazon DevOps Guru](setting-up.md)
++ [Estimate Amazon DevOps Guru resource analysis costs](cost-estimate.md)
 + [Getting started with DevOps Guru](getting-started.md)
    + [Step 1: Get set up](get-set-up.md)
    + [Step 2: Enable DevOps Guru](getting-started-enable-service.md)

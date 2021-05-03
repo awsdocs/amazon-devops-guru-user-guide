@@ -1,11 +1,3 @@
---------
-
-Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
-
-The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
-
---------
-
 # DevOps Guru and interface VPC endpoints \(AWS PrivateLink\)<a name="vpc-interface-endpoints"></a>
 
  You can use VPC endpoints when you call Amazon DevOps Guru APIs\. When you use VPC endpoints, your API calls are more secure because they are contained within your VPC and do not access the internet\. For more information, see [Actions](https://docs.aws.amazon.com/devops-guru/latest/APIReference/API_Operations.html) in the *Amazon DevOps Guru API Reference*\. 

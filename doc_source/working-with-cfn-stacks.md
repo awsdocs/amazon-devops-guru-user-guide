@@ -1,11 +1,3 @@
---------
-
-Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
-
-The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
-
---------
-
 # Working with AWS CloudFormation stacks in DevOps Guru<a name="working-with-cfn-stacks"></a>
 
 You can use AWS CloudFormation stacks to specify which AWS resources you want DevOps Guru to analyze\. A stack is a collection of AWS resources that are managed as a single unit\. The resources in the stacks you choose make up your DevOps Guru coverage boundary\. For each stack you choose, operational data in its supported resources are analyzed for anomalous behavior\. Those issues are then grouped into related anomalies to create insights\. Each insight includes one or more recommendations to help you address them\. The maximum number of stacks you can specify is 500\. For more information, see [Working with stacks](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html) in the *AWS CloudFormation User Guide* and [Update your AWS analysis coverage in DevOps Guru](update-settings.md#update-coverage)\. 

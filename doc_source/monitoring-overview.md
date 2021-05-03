@@ -1,11 +1,3 @@
---------
-
-Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
-
-The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
-
---------
-
 # Logging and monitoring DevOps Guru<a name="monitoring-overview"></a>
 
 Monitoring is an important part of maintaining the reliability, availability, and performance of DevOps Guru and your other AWS solutions\. AWS provides the following monitoring tools to watch DevOps Guru, report when something is wrong, and take automatic actions when appropriate:

@@ -1,11 +1,3 @@
---------
-
-Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
-
-The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
-
---------
-
 # High level DevOps Guru workflow<a name="high-level-workflow"></a>
 
 The Amazon DevOps Guru workflow can be broken down into three high level steps\. First, you specify DevOps Guru coverage by telling it which AWS resources in your AWS account you want it to analyze\. Second, DevOps Guru starts analyzing Amazon CloudWatch metrics, AWS CloudTrail, and other operational data to identify problems that you can fix to improve your operations\. Third, DevOps Guru makes sure you know about insights and important information by sending you a notification for important DevOps Guru events\. You can also configure DevOps Guru to create an OpsItem in AWS Systems Manager OpsCenter to help you track your insights\. The following diagram shows this high\-level workflow\. 

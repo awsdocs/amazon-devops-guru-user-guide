@@ -1,11 +1,3 @@
---------
-
-Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
-
-The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
-
---------
-
 # Logging Amazon DevOps Guru API calls with AWS CloudTrail<a name="logging-using-cloudtrail"></a>
 
 Amazon DevOps Guru is integrated with AWS CloudTrail, a service that provides a record of actions taken by a user, role, or an AWS service in DevOps Guru\. CloudTrail captures API calls for DevOps Guru as events\. The calls captured include calls from the DevOps Guru console and code calls to the DevOps Guru API operations\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for DevOps Guru\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. Using the information collected by CloudTrail, you can determine the request that was made to DevOps Guru, the IP address from which the request was made, who made the request, when it was made, and additional details\. 

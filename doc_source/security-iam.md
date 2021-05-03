@@ -1,11 +1,3 @@
---------
-
-Amazon DevOps Guru is in preview and available in the following AWS Regions: US West \(Oregon\), US East \(N\. Virginia\), US East \(Ohio\), Europe \(Ireland\), and Asia Pacific \(Tokyo\)\.
-
-The preview is open to all AWS accounts\. You do not need to request access\. Features might be added or changed before General Availability is announced\. Contact us at [amazon\-devops\-guru\-feedback@amazon\.com](mailto:amazon-devops-guru-feedback@amazon.com) with feedback\.
-
---------
-
 # Identity and Access Management for Amazon DevOps Guru<a name="security-iam"></a>
 
 
@@ -18,6 +10,7 @@ AWS Identity and Access Management \(IAM\) is an AWS service that helps an admin
 + [Audience](#security_iam_audience)
 + [Authenticating with identities](#security_iam_authentication)
 + [Managing access using policies](#security_iam_access-manage)
++ [DevOps Guru updates to AWS managed policies and service\-linked role](#security-iam-awsmanpol-updates)
 + [How Amazon DevOps Guru works with IAM](security_iam_service-with-iam.md)
 + [Identity\-based policies for Amazon DevOps Guru](security_iam_id-based-policy-examples.md)
 + [Using service\-linked roles for DevOps Guru](using-service-linked-roles.md)
@@ -112,6 +105,19 @@ AWS supports additional, less\-common policy types\. These policy types can set 
 ### Multiple policy types<a name="security_iam_access-manage-multiple-policies"></a>
 
 When multiple types of policies apply to a request, the resulting permissions are more complicated to understand\. To learn how AWS determines whether to allow a request when multiple policy types are involved, see [Policy evaluation logic](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html) in the *IAM User Guide*\.
+
+## DevOps Guru updates to AWS managed policies and service\-linked role<a name="security-iam-awsmanpol-updates"></a>
+
+View details about updates to AWS managed policies and service\-linked role for DevOps Guru since this service began tracking these changes\. For automatic alerts about changes to this page, subscribe to the RSS feed on the DevOps Guru [Amazon DevOps Guru document history](doc-history.md)\.
+
+
+
+
+| Change | Description | Date | 
+| --- | --- | --- | 
+|  [AmazonDevOpsGuruReadOnlyAccess](security_iam_id-based-policy-examples.md#managed-read-only-access) – Update to an existing policy  |  The `AmazonDevOpsGuruReadOnlyAccess` managed policy now allows read\-only access to the DevOps Guru `GetCostEstimation` and `StartCostEstimation` actions\.  | April 27, 2021 | 
+|  [Service\-linked role permissions for DevOps Guru](using-service-linked-roles.md#slr-permissions) – Update to an existing policy  |  The `AmazonDevOpsGuruServiceRolePolicy` role now allows access to the AWS Systems Manager `AddTagsToResource` and Amazon EC2 Auto Scaling `DescribeAutoScalingGroups` actions\.  | April 27, 2021 | 
+|  DevOps Guru started tracking changes  |  DevOps Guru started tracking changes for its AWS managed policies\.  | December 10, 2020 | 
 
 
 
