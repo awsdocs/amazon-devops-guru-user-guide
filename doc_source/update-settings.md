@@ -8,6 +8,7 @@
 **Topics**
 + [Update your AWS analysis coverage in DevOps Guru](#update-coverage)
 + [Update your notifications in DevOps Guru](#update-notifications)
++ [Filter your DevOps Guru notifications](#update-notifications-filter)
 + [Update AWS Systems Manager integration in DevOps Guru](#update-systems-manager-integration)
 
 ## Update your AWS analysis coverage in DevOps Guru<a name="update-coverage"></a>
@@ -35,7 +36,7 @@ If you update your coverage to stop analyzing resources, you might continue to i
 
      1. If you have not enabled any stacks, in **CloudFormation stacks**, choose **Manage analysis coverage**\. 
 
-     1. Select up to 500 stacks that contain the resources that you want analyzed\. You can enter the name of a stack in **Find stacks** to quickly locate a specific stack\. 
+     1. Select up to 1000 stacks that contain the resources that you want analyzed\. You can enter the name of a stack in **Find stacks** to quickly locate a specific stack\. 
 
      1. Choose **Save**\. 
 
@@ -74,9 +75,108 @@ Set up Amazon Simple Notification Service topics that are used to notify you abo
 
 1. To remove an Amazon SNS topic, choose **Remove** next to the topic you want to remove\. 
 
+### Permissions added to your Amazon SNS topic<a name="permissions-added-to-sns-topic-on-update"></a>
+
+An Amazon SNS topic is a resource that contains an AWS Identity and Access Management \(IAM\) resource policy\. When you specify a topic here, DevOps Guru appends the following permissions to its resource policy\.
+
+```
+{
+    "Sid": "DevOpsGuru-added-SNS-topic-permissions",
+    "Effect": "Allow",
+    "Principal": {
+        "Service": "region-id.devops-guru.amazonaws.com"
+    },
+    "Action": "sns:Publish",
+    "Resource": "arn:aws:sns:region-id:topic-owner-account-id:my-topic-name",
+    "Condition" : {
+      "StringEquals" : {
+        "AWS:SourceArn": "arn:aws:devops-guru:region-id:topic-owner-account-id:channel/devops-guru-channel-id",
+        "AWS:SourceAccount": "topic-owner-account-id"
+    }
+  }
+}
+```
+
+These permissions are required for DevOps Guru to publish notifications using a topic\. If you prefer to not have these permissions on the topic, you can safely remove them and the topic will continue to work as it did before you chose it\. However, if these appended permissions are removed, DevOps Guru cannot use the topic to generate notifications\. 
+
+## Filter your DevOps Guru notifications<a name="update-notifications-filter"></a>
+
+You can create an Amazon Simple Notification Service \(Amazon SNS\) subscription filter policy to reduce the number of notifications you receive from Amazon DevOps Guru\.
+
+**Topics**
++ [Example filtered Amazon SNS notification for Amazon DevOps Guru](#sample-filtered-notification)
+
+Use a filter policy to specify the types of notifications you receive\. You can filter your Amazon SNS messages using the following keywords\.
++ `NEW_INSIGHT` — Receive a notification when a new insight is created\.
++ `CLOSED_INSIGHT` — Receive a notification when an existing insight is closed\.
++ `NEW_RECOMMENDATION` — Receive a notification when a new recommendation is created from an insight\.
++ `NEW_ASSOCIATION` — Receive a notification when a new anomaly is detected from an insight\.
++ `CLOSED_ASSOICATION` — Receive a notification when an existing anomaly is closed\.
++ `SEVERITY_UPGRADED` — Receive a notification when the severity of an insight is upgraded
+
+For information about how to create an Amazon SNS subscription filter policy, see [Amazon SNS subscription filter policies](https://docs.aws.amazon.com/sns/latest/dg/sns-subscription-filter-policies.html) in the *Amazon Simple Notification Service Developer Guide*\. In your filter policy, you specify one of the keywords with the policy's `MessageType`\. For example, the following would appear in a filter that specifies the Amazon SNS topic only deliver notifications when a new anomaly is detected from an insight\.
+
+```
+{ 
+  "MessageType":["NEW_ ASSOCIATION"] 
+}
+```
+
+### Example filtered Amazon SNS notification for Amazon DevOps Guru<a name="sample-filtered-notification"></a>
+
+The following is an example of an Amazon Simple Notification Service \(Amazon SNS\) notification from an Amazon SNS topic with a filter policy\. Its `MessageType` is set to `NEW_ASSOCIATION`, so it sends notifications only when a new anomaly is detected from an insight\.
+
+```
+{
+  "Type" : "Notification",
+  "MessageId" : "9ff514ee-ba4a-515a-9298-4d6887a89c59",
+  "TopicArn" : "arn:aws:sns:us-east-1:123456789012:DevOpsGuru-insights-sns",
+  "Timestamp" : "2021-08-05T19:27:30.731Z",
+  "MessageAttributes" : { 
+      "MessageType" : {
+          "Type":"String",
+          "Value":"NEW_ASSOCIATION"
+      } 
+  },
+  "Message" : {
+      "AccountId": "123456789012",
+      "Region": "us-east-1",
+      "MessageType": "NEW_ASSOCIATION",
+      "InsightId": "ADyf4FvaVNDzu9MA2-IgFDkAAAAAAAAAEGpJd5sjicgauU2wmAlnWUyyI2hiO5it",
+      "InsightDescription": "ThrottledRequests",
+      "StartTime": 1628767500000,
+      "Anomalies": [
+        {
+          "Id": "AG2n8ljW74BoI1CHu-m_oAgAAAF7Ohu24N4Yro69ZSdUtn_alzPH7VTpaL30JXiF",
+          "StartTime": 1628767500000,
+          "SourceDetails": [
+            {
+              "DataSource": "CW_METRICS",
+              "DataIdentifiers": {
+                "stat": "Sum",
+                "unit": "None",
+                "period": "60",
+                "ResourceId": "TaskRecords",
+                "namespace": "AWS/DynamoDB",
+                "name": "ThrottledRequests",
+                "ResourceType": "DynamoDB/Table",
+                "dimensions": "{\"TableName\":\"TaskRecords\",\"Operation\":\"BatchGetItem\"}"
+              }
+            }
+          ]
+        }
+      ],
+      "awsInsightSource": "aws.devopsguru"
+  }
+}
+```
+
 ## Update AWS Systems Manager integration in DevOps Guru<a name="update-systems-manager-integration"></a>
 
 You can enable the creation of an OpsItem for each new insight in AWS Systems Manager OpsCenter\. OpsCenter is a centralized system where you can view, investigate, and review operational work items \(OpsItems\)\. The OpsItems for your insights can help you manage work that addresses the anomalous behavior that triggered the creation of each insight\. For more information, see [AWS Systems Manager OpsCenter](https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html) and [Working with OpsItem](https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html) in the *AWS Systems Manager User Guide*\. 
+
+**Note**  
+If you change the key or value of the tag field of an OpsItem, then DevOps Guru is not able to update that OpsItem\. For example, if you change a tag of an OpsItem from `"aws:RequestTag/DevOps-GuruInsightSsmOpsItemRelated": "true"` to something else, then DevOps Guru cannot update that OpsItem\.
 
 **To manage your Systems Manager integration**
 

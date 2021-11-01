@@ -6,20 +6,20 @@
 
 ```
 {
-    "Version": "2012-10-17",
-    "Id": "your-kms-key-policy",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "Service": "region-id.devops-guru.amazonaws.com"
-            },
-            "Action": [
-                "kms:GenerateDataKey*",
-                "kms:Decrypt"
-            ],
-            "Resource": "*"
-        }
-      ]
+  "Version": "2012-10-17",
+  "Id": "your-kms-key-policy",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "region-id.devops-guru.amazonaws.com"
+      },
+      "Action": [
+        "kms:GenerateDataKey*",
+        "kms:Decrypt"
+      ],
+      "Resource": "*"
+    }
+  ]
 }
 ```

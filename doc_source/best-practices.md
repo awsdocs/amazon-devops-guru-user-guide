@@ -1,6 +1,6 @@
 # Best practices in DevOps Guru<a name="best-practices"></a>
 
-The following are some best practices to help you understand, diagnose, and fix anomalous behavior detected by Amazon DevOps Guru\. Use best practices with [Understanding insights in the DevOps Guru console](understanding-insights-console.md) to address operational problems detected by DevOps Guru\.
+The following are some best practices to help you understand, diagnose, and fix anomalous behavior detected by Amazon DevOps Guru\. Use best practices with [Understanding insights in the DevOps Guru console](working-with-insights.md#understanding-insights-console) to address operational problems detected by DevOps Guru\.
 + In an insight's timeline view, look at the highlighted metrics first\. They are often key indicators of the problem\. 
 + Use Amazon CloudWatch to view metrics that occurred immediately before the first highlighted metric in an insight\. This can help you pinpoint when and how behavior changed to help you diagnose and fix the problem\. 
 + Multiple dimensions of the same metric can often be anomalous\. Look at the dimensions in the graphed view to get a deeper understanding of the problem\. 

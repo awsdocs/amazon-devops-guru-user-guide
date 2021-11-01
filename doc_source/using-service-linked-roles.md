@@ -61,6 +61,11 @@ The role permissions policy allows DevOps Guru to complete the following action
       "ssm:CreateOpsItem"
     ],
     "Resource": "*"
+    "Condition": {
+      "StringEquals": {
+        "aws:RequestTag/DevOps-GuruInsightSsmOpsItemRelated": "true"
+      }
+    }
   },
   {
     "Sid": "AllowAddTagsToOpsItem",
@@ -69,6 +74,11 @@ The role permissions policy allows DevOps Guru to complete the following action
         "ssm:AddTagsToResource"
     ],
     "Resource": "arn:aws:ssm:*:*:opsitem/*"
+    "Condition": {
+      "StringEquals": {
+        "aws:RequestTag/DevOps-GuruInsightSsmOpsItemRelated": "true"
+      }
+    }
   },
   {
     "Sid": "AllowAccessOpsItem",

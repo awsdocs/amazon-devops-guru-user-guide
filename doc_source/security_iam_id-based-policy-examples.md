@@ -179,6 +179,7 @@ The `AmazonDevOpsGuruReadOnlyAccess` policy contains the following statement\.
         "devops-guru:DescribeAccountHealth",
         "devops-guru:DescribeAccountOverview",
         "devops-guru:DescribeAnomaly",
+        "devops-guru:DescribeFeedback",
         "devops-guru:DescribeInsight",
         "devops-guru:DescribeResourceCollectionHealth",
         "devops-guru:DescribeServiceIntegration",
@@ -204,6 +205,13 @@ The `AmazonDevOpsGuruReadOnlyAccess` policy contains the following statement\.
       "Resource": "*"
     },
     {
+	  "Effect": "Allow",
+	  "Action": [
+	  "iam:GetRole"
+	  ],
+	  "Resource": "arn:aws:iam::*:role/aws-service-role/devops-guru.amazonaws.com/AWSServiceRoleForDevOpsGuru"
+    },
+    {
       "Sid": "CloudWatchGetMetricDataAccess",
       "Effect": "Allow",
       "Action": [
@@ -211,7 +219,6 @@ The `AmazonDevOpsGuruReadOnlyAccess` policy contains the following statement\.
         ],
         "Resource": "*"
       }
-
   ]
 }
 ```

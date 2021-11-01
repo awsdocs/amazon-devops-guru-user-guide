@@ -1,7 +1,7 @@
 # Amazon DevOps Guru User Guide
 
 -----
-*****Copyright &copy;  Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -23,8 +23,6 @@ Amazon's trademarks and trade dress may not be used in
    + [Step 2: Enable DevOps Guru](getting-started-enable-service.md)
    + [Step 3: Specify AWS CloudFormation stacks for DevOps Guru resource coverage](configure-stacks.md)
 + [Working with insights in DevOps Guru](working-with-insights.md)
-   + [View DevOps Guru insights](view-insights.md)
-   + [Understanding insights in the DevOps Guru console](understanding-insights-console.md)
 + [Working with AWS CloudFormation stacks in DevOps Guru](working-with-cfn-stacks.md)
 + [Update DevOps Guru settings](update-settings.md)
 + [Best practices in DevOps Guru](best-practices.md)

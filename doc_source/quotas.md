@@ -18,4 +18,4 @@ The following table lists the current quota in Amazon DevOps Guru\. This quota 
 
 |  |  | 
 | --- |--- |
-| Maximum number of AWS CloudFormation stacks you can specify | 500 | 
+| Maximum number of AWS CloudFormation stacks you can specify | 1000 | 

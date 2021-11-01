@@ -10,7 +10,7 @@ To configure Amazon DevOps Guru to use for the first time, you must choose whic
    + **Analyze all AWS resources in the current AWS account**: DevOps Guru analyzes all AWS resources in your account\. 
    + **Choose AWS resources to analyze later**: DevOps Guru analyzes only AWS resources that are defined in AWS CloudFormation stacks that you specify later\. 
 
-   DevOps Guru can analyze any resource that is associated with the AWS it supports\. For more information about the supported services and resources, see [Amazon DevOps Guru pricing](http://aws.amazon.com/devops-guru/pricing/)\.
+   DevOps Guru can analyze any resource type that is associated with an AWS service that it supports\. For more information about the supported services and resources, see [Amazon DevOps Guru pricing](http://aws.amazon.com/devops-guru/pricing/)\.
 
 1. You can add up to two topics\. DevOps Guru uses the topic or topics to notify you about important DevOps Guru events, such as the creation of a new insight\. If you don't specify a topic now, you can add one later by choosing **Settings** in the navigation pane\. 
 

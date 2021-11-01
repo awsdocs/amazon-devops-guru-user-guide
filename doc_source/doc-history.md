@@ -2,10 +2,11 @@
 
 The following table describes the documentation for this release of DevOps Guru\.
 + **API version: latest**
-+ **Latest documentation update: **April 27, 2021
++ **Latest documentation update: **October 25, 2021
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [General availability release](#doc-history) | Amazon DevOps Guru is now generally available \(GA\)\. | May 4, 2021 | 
 | [New topic](#doc-history) | You can now generate a monthly cost estimate for DevOps Guru to analyze your resources\. For more information, see [Estimate your Amazon DevOps Guru costs](https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html)\. | April 27, 2021 | 
 | [VPC Endpoint support](#doc-history) | You can now use VPC endpoints to improve the security of your resource analysis and insight generation\. For more information, see [DevOps Guru and interface VPC endpoints \(AWS PrivateLink\)](https://docs.aws.amazon.com/devops-guru/latest/userguide/vpc-interface-endpoints)\. | April 15, 2021 | 
 | [New topic](#doc-history) | A new topic about how to monitor DevOps Guru with Amazon CloudWatch was added\. For more information, see [Monitoring DevOps Guru with Amazon CloudWatch](https://docs.aws.amazon.com/devops-guru/latest/userguide/monitoring-cloudwatch.html)\. | December 11, 2020 | 

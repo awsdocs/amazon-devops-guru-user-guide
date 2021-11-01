@@ -7,7 +7,7 @@ DevOps Guru scans your selected resources to create a monthly cost estimate\. Yo
 You can create one cost estimate at a time\. The time it takes to generate a cost estimate depends on the number of resources you specify when you create the cost estimate\. When you specify a lot of resources, it can take up to four hours to complete\. Your actual costs vary and depend on the percentage of time your analyzed active resources are utilized\.
 
 **Note**  
-For a cost estimate, you can specify only one AWS CloudFormation stack\. For your actual coverage boundary, you can specify up to 500 stacks\.
+For a cost estimate, you can specify only one AWS CloudFormation stack\. For your actual coverage boundary, you can specify up to 1000 stacks\.
 
 **To create a monthly resource analysis cost estimate**
 
@@ -29,6 +29,6 @@ For a cost estimate, you can specify only one AWS CloudFormation stack\. For you
 
 1. Choose **Estimate monthly cost**\.
 
-1. \(Optional\) In the **Active resource utilization %** column, enter an updated percentage value for one or more AWS services\. The default *active resource utilization %* is 100%\. This means that DevOps Guru generates the estimate for the AWS service by calculating the cost of one hour of analyzing its resources, then extrapolating that over 30 days for a total of 360 hours\. If a service is active less than 100% of the time, you can update the percentage based on your estimated usage for a more accurate estimate\. For example, if you update a service's active resource utilization to 75%, the one hour cost of analyzing its resources is extrapolated over \(360 x 0\.75\) hours, or 270 hours\. 
+1. \(Optional\) In the **Active resource utilization %** column, enter an updated percentage value for one or more AWS services\. The default *active resource utilization %* is 100%\. This means that DevOps Guru generates the estimate for the AWS service by calculating the cost of one hour of analyzing its resources, then extrapolating that over 30 days for a total of 720 hours\. If a service is active less than 100% of the time, you can update the percentage based on your estimated usage for a more accurate estimate\. For example, if you update a service's active resource utilization to 75%, the one hour cost of analyzing its resources is extrapolated over \(720 x 0\.75\) hours, or 540 hours\. 
 
 If your estimate is zero dollars, then the resources you chose likely do not include resources supported by DevOps Guru\. For more information about the supported services and resources, see [Amazon DevOps Guru pricing](http://aws.amazon.com/devops-guru/pricing/)\. 
