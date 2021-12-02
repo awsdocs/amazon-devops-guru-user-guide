@@ -8,7 +8,7 @@ Optionally, you can use Quick Setup, a capability of AWS Systems Manager, to set
 + One or more target AWS accounts in each OU\.
 + One administrator account with privileges to manage the target accounts\.
 
-To learn how to set up DevOps Guru using Quick Setup, see [Congfigure DevOps Guru with Quick Setup](https://docs.aws.amazon.com/systems-manager/latest/userguide/quick-setup-devops.html) in the *AWS Systems Manager User Guide*\.
+To learn how to set up DevOps Guru using Quick Setup, see [Configure DevOps Guru with Quick Setup](https://docs.aws.amazon.com/systems-manager/latest/userguide/quick-setup-devops.html) in the *AWS Systems Manager User Guide*\.
 
 Use the following steps to set up DevOps Guru without Quick Setup\.
 + [Step 1 – Sign up for AWS](#setting-up-aws-sign-up)
@@ -29,13 +29,18 @@ If you do not have an AWS account, complete the following steps to create one\.
 
 ## Step 2 – Determine coverage for DevOps Guru<a name="setting-up-determine-coverage"></a>
 
-Think about how you want to configure coverage for Amazon DevOps Guru\. Coverage determines the AWS resources that are covered, or analyzed, to detect anomalous behavior\. You want DevOps Guru to cover the AWS resources that are created by the AWS services that make up your operational solutions\. You have two options\. 
+Your boundary coverage determines the AWS resources that are analyzed by Amazon DevOps Guru for anomalous behavior\. We recommend that you group your resources into your operational applications\. All the resources in your resource boundary should comprise one or more of your applications\. If you have one operational solution, then your coverage boundary should include all of its resources\. If you have multiple applications, choose the resources that make up each solution and group them together using AWS CloudFormation stacks or AWS tags\. All of the combined resources you specify, whether they define one or more applications, are analyzed by DevOps Guru and make up its coverage boundary\. 
 
-1. By default, DevOps Guru analyzes all supported AWS resources in your AWS Region and account\. If you do not specify AWS CloudFormation stacks that define specific resources to cover, then all resources in your account are covered\. 
+Use one of the following methods to specify the resources in your operational solutions\.
++ Choose to have your AWS Region and account define your coverage boundary\. With this option, DevOps Guru analyzes all resources in your account and Region\. This is a good option to choose if you use your account for only one application\.
++ Use AWS CloudFormation stacks to define the resources in your operational application\. AWS CloudFormation templates define and generate your resources for you\. Specify the stacks that create your application resources when you configure DevOps Guru\. You can update your stacks at any time\. All of the resources in the stacks that you choose define your boundary coverage\. For more information, see [Use AWS CloudFormation stacks to identify resources in your DevOps Guru applications](working-with-cfn-stacks.md)\. 
++ Use AWS tags to specify AWS resources in your applications\. DevOps Guru analyzes only the resources that contain the tags you choose\. Those resources make up your boundary\.
 
-1. You can use AWS CloudFormation stacks to specify which resources are analyzed by DevOps Guru\. Think about which resources you need, then create AWS CloudFormation templates that define and generate those resources for you\. You specify your stacks when you configure DevOps Guru\. You can also update your stacks at any time\. For more information, see [Working with AWS CloudFormation stacks in DevOps Guru](working-with-cfn-stacks.md)\. 
+  An AWS tag consists of a tag *key* and a tag *value*\. You can specify one tag *key* and you can specify one or more *values* with that *key*\. Use one *value* for all the resources in one of your applications\. If you have multiple applications, then use a tag with the same *key* for all of them, and group the resources into your applications using the tags' *values*\. All of the resources with the tags that you choose make up the coverage boundary for DevOps Guru\. For more information, see [Use tags to identify resources in your DevOps Guru applications](working-with-resource-tags.md)\.
 
- For more information, see [Getting started with DevOps Guru](getting-started.md)\. For more information about the supported services and resources, see [Amazon DevOps Guru pricing](http://aws.amazon.com/devops-guru/pricing/)\. 
+If your boundary coverage includes resources that make up more than one application, you can use tags to filter your insights by to view them by one application at a time\. For more information, see Step 4 in [View DevOps Guru insights](working-with-insights.md#view-insights)\.
+
+For more information, see [Define applications Using AWS resources](working-with-resource-collections.md)\. For more information about the supported services and resources, see [Amazon DevOps Guru pricing](http://aws.amazon.com/devops-guru/pricing/)\. 
 
 ## Step 3 – Identify your Amazon SNS notifications topic<a name="setting-up-notifications"></a>
 

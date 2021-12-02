@@ -5,4 +5,4 @@ In this section, you learn how to get started with Amazon DevOps Guru so it can
 **Topics**
 + [Step 1: Get set up](get-set-up.md)
 + [Step 2: Enable DevOps Guru](getting-started-enable-service.md)
-+ [Step 3: Specify AWS CloudFormation stacks for DevOps Guru resource coverage](configure-stacks.md)
++ [Step 3: Specify your DevOps Guru resource coverage](choose-coverage.md)

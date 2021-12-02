@@ -20,12 +20,19 @@ For a cost estimate, you can specify only one AWS CloudFormation stack\. For you
 1. Choose the resources you want to use to create your estimate\.
    + If you want to estimate the cost for DevOps Guru to analyze the resources defined by one AWS CloudFormation stack, do the following\.
 
-     1. Choose **CloudFormation stack**\.
+     1. Choose **CloudFormation stack in the current Region**\.
 
-     1. Enter the name of an AWS CloudFormation stack in your AWS account in **Enter CloudFormation stack name**\. For information about working with and viewing your stacks, see [Working with stacks](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html) in the *AWS CloudFormation User Guide*\.
+     1. In **Choose a CloudFormation stack**, choose the name of an AWS CloudFormation stack in your AWS account\. You can also enter the name of a stack to find it quickly\. For information about working with and viewing your stacks, see [Working with stacks](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html) in the *AWS CloudFormation User Guide*\.
 
      1. \(Optional\) If you use an AWS CloudFormation stack that you are currently not analyzing, choose **Enable resource analysis** to enable DevOps Guru to start analyzing its resources\. This option is not available if you have not enabled DevOps Guru or if you are already analyzing the resources in the stack\.
-   + If you want to estimate the cost for DevOps Guru to analyze the resource in your AWS account and Region, choose **Current AWS account**\.
+   + If you want to estimate the cost for DevOps Guru to analyze resources with a tag, do the following\.
+
+     1. Choose **Tags on AWS resources in the current Region**
+
+     1. In **Tag key** choose your tag's *key*
+
+     1. In **Tag value** choose **\(all values\)** or choose one *value*\.
+   + If you want to estimate the cost for DevOps Guru to analyze the resource in your AWS account and Region, choose **AWS account in the current Region**\.
 
 1. Choose **Estimate monthly cost**\.
 

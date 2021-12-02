@@ -78,6 +78,7 @@ The following AWS\-managed policies, which you can attach to users in your accou
 **Topics**
 + [AmazonDevOpsGuruFullAccess](#managed-full-access)
 + [AmazonDevOpsGuruReadOnlyAccess](#managed-read-only-access)
++ [AmazonDevOpsGuruOrganizationsAccess](#organizations-policy)
 
 ### AmazonDevOpsGuruFullAccess<a name="managed-full-access"></a>
 
@@ -90,7 +91,7 @@ The `AmazonDevOpsGuruFullAccess` policy contains the following statement\.
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "AmazonDevOpsGuruFullAccess",
+      "Sid": "DevOpsGuruFullAccess",
 	"Effect": "Allow",
 	"Action": [
          "devops-guru:*"
@@ -151,12 +152,15 @@ The `AmazonDevOpsGuruFullAccess` policy contains the following statement\.
         "iam:DeleteServiceLinkedRole",
         "iam:GetServiceLinkedRoleDeletionStatus"
       ],
-      "Resource": "arn:aws:iam::*:role/aws-service-role/devops-guru.amazonaws.com/AWSServiceRoleForDevOpsGuru",
-      "Condition": {
-        "StringLike": {
-          "iam:AWSServiceName": "devops-guru.amazonaws.com"
-        }
-      }
+      "Resource": "arn:aws:iam::*:role/aws-service-role/devops-guru.amazonaws.com/AWSServiceRoleForDevOpsGuru"
+    },
+    {
+        "Sid": "RDSDescribeDBInstancesAccess",
+        "Effect": "Allow",
+        "Action": [
+            "rds:DescribeDBInstances"
+        ],
+        "Resource": "*"
     }
   ]
 }
@@ -218,7 +222,74 @@ The `AmazonDevOpsGuruReadOnlyAccess` policy contains the following statement\.
           "cloudwatch:GetMetricData"
         ],
         "Resource": "*"
-      }
+    },
+    {
+        "Sid": "RDSDescribeDBInstancesAccess",
+        "Effect": "Allow",
+        "Action": [
+            "rds:DescribeDBInstances"
+        ],
+        "Resource": "*"
+    }
   ]
+}
+```
+
+### AmazonDevOpsGuruOrganizationsAccess<a name="organizations-policy"></a>
+
+` AmazonDevOpsGuruOrganizationsAccess` – Provides Organizations administrators access to the DevOps Guru multi\-account view within an organization\. Apply this policy to your organization's administrator\-level users for whom you want to grant full access to DevOps Guru within an organization\. You can apply this policy in your organization's management account and delegated administrator account for DevOps Guru\. You can apply `AmazonDevOpsGuruReadOnlyAccess` or `AmazonDevOpsGuruFullAccess` in addition to this policy to provide read\-only or full access to DevOps Guru\. 
+
+The `AmazonDevOpsGuruOrganizationsAccess` policy contains the following statement\.
+
+```
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "AmazonDevOpsGuruOrganizationsAccess",
+			"Effect": "Allow",
+			"Action": [
+				"devops-guru:DescribeOrganizationHealth",
+				"devops-guru:DescribeOrganizationResourceCollectionHealth",
+				"devops-guru:DescribeOrganizationOverview",
+				"devops-guru:ListOrganizationInsights",
+				"devops-guru:SearchOrganizationInsights"
+			],
+			"Resource": "*"
+		},
+		{
+			"Sid": "OrganizationsDataAccess",
+			"Effect": "Allow",
+			"Action": [
+				"organizations:DescribeAccount",
+				"organizations:DescribeOrganization",
+				"organizations:ListAWSServiceAccessForOrganization",
+				"organizations:ListAccounts",
+				"organizations:ListChildren",
+				"organizations:ListOrganizationalUnitsForParent",
+				"organizations:ListRoots"
+			],
+			"Resource": "arn:aws:organizations::*:"
+		},
+		{
+			"Sid": "OrganizationsAdminDataAccess",
+			"Effect": "Allow",
+			"Action": [
+				"organizations:DeregisterDelegatedAdministrator",
+				"organizations:RegisterDelegatedAdministrator",
+				"organizations:ListDelegatedAdministrators",
+				"organizations:EnableAWSServiceAccess",
+				"organizations:DisableAWSServiceAccess"
+			],
+			"Resource": "*",
+			"Condition": {
+				"StringEquals": {
+					"organizations:ServicePrincipal": [
+						"devops-guru.amazonaws.com"
+					]
+				}
+			}
+		}
+	]
 }
 ```

@@ -2,10 +2,17 @@
 
 The following table describes the documentation for this release of DevOps Guru\.
 + **API version: latest**
-+ **Latest documentation update: **October 25, 2021
++ **Latest documentation update: **December 1, 2021
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Support to define your application with AWS tags](#doc-history) |  You can now use AWS tags to identify the resources you want DevOps Guru to analyze, identify the resources in your applications, and filter insights in the console\. For more information, see [Use tags to identify resources in your applications](https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-resoruce-tags.html)\. | December 1, 2021 | 
+| [Service\-linked role and managed policy updates](#doc-history) | Expanded policies available in the IAM console\. The changes allow DevOps Guru to support enhanced integration with Amazon Relational Database Service \(Amazon RDS\)\. For more information, see [Using service\-linked roles](https://docs.aws.amazon.com/devops-guru/latest/userguide/using-service-linked-roles.html) and [AWS managed \(predefined\) policies for DevOps Guru](https://docs.aws.amazon.com/devops-guru/latest/userguide/security_iam_id-based-policy-examples.html#managed-policies)\. | December 1, 2021 | 
+| [Amazon RDS support](#doc-history) | DevOps Guru now provides comprehensive analysis and insights for Amazon Relational Database Service \(Amazon RDS\) resources in your application\. For more information, see [Working with anomalies in DevOps Guru for Amazon RDS](https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-rds.html)\. | December 1, 2021 | 
+| [Amazon EventBridge integration](#doc-history) | DevOps Guru now integrates with EventBridge to notify you of certain events relating to your DevOps Guru insights\. For more information, see [Working with EventBridge](https://docs.aws.amazon.com/devops-guru/latest/userguide/working-with-eventbridge.html)\. | November 18, 2021 | 
+| [AWS managed policy added](#doc-history) | New AWS managed policy added\. The `AmazonDevOpsGuruOrganizationsAccess` policy provides access to DevOps Guru within an organization\. For more information, see [identity\-based policies](https://docs.aws.amazon.com/devops-guru/latest/userguide/security_iam_id-based-policy-examples.html#organizations-policy)\. | November 16, 2021 | 
+| [Service\-linked role policy update](#doc-history) | Expanded policy available in the IAM console\. The change allows DevOps Guru to support the multi account view\. For more information, see [Using service\-linked roles](https://docs.aws.amazon.com/devops-guru/latest/userguide/using-service-linked-roles.html)\. | November 4, 2021 | 
+| [Cross account support](#doc-history) | You can now view insights and metrics across multiple accounts in your organization\. For more information, see [What is Amazon DevOps Guru](https://docs.aws.amazon.com/devops-guru/latest/userguide/what-is.html)\. | November 4, 2021 | 
 | [General availability release](#doc-history) | Amazon DevOps Guru is now generally available \(GA\)\. | May 4, 2021 | 
 | [New topic](#doc-history) | You can now generate a monthly cost estimate for DevOps Guru to analyze your resources\. For more information, see [Estimate your Amazon DevOps Guru costs](https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html)\. | April 27, 2021 | 
 | [VPC Endpoint support](#doc-history) | You can now use VPC endpoints to improve the security of your resource analysis and insight generation\. For more information, see [DevOps Guru and interface VPC endpoints \(AWS PrivateLink\)](https://docs.aws.amazon.com/devops-guru/latest/userguide/vpc-interface-endpoints)\. | April 15, 2021 | 

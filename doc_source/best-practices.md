@@ -1,8 +1,9 @@
 # Best practices in DevOps Guru<a name="best-practices"></a>
 
-The following are some best practices to help you understand, diagnose, and fix anomalous behavior detected by Amazon DevOps Guru\. Use best practices with [Understanding insights in the DevOps Guru console](working-with-insights.md#understanding-insights-console) to address operational problems detected by DevOps Guru\.
+The following best practices can help you understand, diagnose, and fix anomalous behavior detected by Amazon DevOps Guru\. Use best practices with [Understanding insights in the DevOps Guru console](working-with-insights.md#understanding-insights-console) to address operational problems detected by DevOps Guru\.
 + In an insight's timeline view, look at the highlighted metrics first\. They are often key indicators of the problem\. 
-+ Use Amazon CloudWatch to view metrics that occurred immediately before the first highlighted metric in an insight\. This can help you pinpoint when and how behavior changed to help you diagnose and fix the problem\. 
++ Use Amazon CloudWatch to view metrics that occurred immediately before the first highlighted metric in an insight to pinpoint when and how behavior changed\. This can help you diagnose and fix the problem\. 
++ For Amazon RDS resources, look at Performance Insights metrics\. By correlating counter metrics with database load, you can get detailed information about performance issues\. For more information, see [Analyzing performance anomalies with DevOps Gurufor Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/devops-guru-for-rds.html)\.
 + Multiple dimensions of the same metric can often be anomalous\. Look at the dimensions in the graphed view to get a deeper understanding of the problem\. 
 + Look in the events section of an insight for deployment or infrastructure events that happened around the time the insight was created\. Knowing which events occurred when an insight's anomalous behavior occurred can help you understand and diagnose the problem\. 
 + Look for tickets in your operational system that happened around the same time as an insight for clues\. 

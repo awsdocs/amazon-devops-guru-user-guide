@@ -2,9 +2,9 @@
 
  The DevOps Guru workflow integrates with several AWS services, including Amazon CloudWatch, AWS CloudTrail, Amazon Simple Notification Service, and AWS Systems Manager\. The following diagram shows a detailed workflow that includes how it works with other AWS services\. 
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/devops-guru/latest/userguide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/devops-guru/latest/userguide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/devops-guru/latest/userguide/images/capstone-workflow-diagram.png)
 
-This diagram shows a scenario in which DevOps Guru coverage is specified by the AWS resources that are defined in AWS CloudFormation stacks\. If no stacks are chosen, then DevOps Guru coverage analyzes all AWS resources in your account\. 
+This diagram shows a scenario in which DevOps Guru coverage is specified by the AWS resources that are defined in AWS CloudFormation stacks or using AWS tags\. If no stacks or tags are chosen, then DevOps Guru coverage analyzes all AWS resources in your account\. For more information, see [Define applications Using AWS resources](working-with-resource-collections.md) and [Determine coverage for DevOps Guru](setting-up.md#setting-up-determine-coverage)\.
 
 1. During setup, you specify one or two Amazon SNS topics that are used to notify you about important DevOps Guru events, such as when an insight is created\. Next, you can specify AWS CloudFormation stacks that define the resources you want analyzed\. You can also enable Systems Manager to generate an OpsItem for each insight to help you manage your insights\. 
 
